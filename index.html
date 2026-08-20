@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Returning Star — A Chronicle</title>
+<meta name="description" content="A chronicle of the Feast of the Falling Star, compiled by an unreliable witness.">
+<style>
+  :root {
+    --night: #0b0e1a;
+    --night2: #131830;
+    --ink: #e8e2d4;
+    --ink-dim: #a9a290;
+    --gold: #e0b35c;
+    --gold-dim: #9c7c3c;
+    --parchment: #efe6cf;
+    --parchment-ink: #2c2417;
+    --accent: #7f9ce0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--night);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.65;
+    font-size: 1.06rem;
+  }
+  .stars {
+    background:
+      radial-gradient(1px 1px at 20% 30%, #fff8 0, transparent 100%),
+      radial-gradient(1px 1px at 40% 70%, #fff6 0, transparent 100%),
+      radial-gradient(1.5px 1.5px at 65% 20%, #fff7 0, transparent 100%),
+      radial-gradient(1px 1px at 80% 55%, #fff5 0, transparent 100%),
+      radial-gradient(1px 1px at 10% 80%, #fff6 0, transparent 100%),
+      radial-gradient(1.5px 1.5px at 90% 85%, #fff4 0, transparent 100%),
+      radial-gradient(1px 1px at 55% 45%, #fff5 0, transparent 100%),
+      linear-gradient(180deg, var(--night) 0%, var(--night2) 100%);
+  }
+  header {
+    text-align: center;
+    padding: 3.5rem 1rem 2rem;
+  }
+  header .kicker {
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--gold-dim);
+  }
+  h1 {
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    color: var(--gold);
+    font-weight: normal;
+    letter-spacing: 0.06em;
+    margin: 0.4rem 0 0.2rem;
+  }
+  header .sub {
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 1.1rem;
+  }
+  .hero {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 0 1rem;
+  }
+  .hero img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 12px 50px #000a;
+    display: block;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  .preamble {
+    font-style: italic;
+    color: var(--ink-dim);
+    border-left: 3px solid var(--gold-dim);
+    padding-left: 1.2rem;
+    margin: 2rem 0 3rem;
+  }
+  h2 {
+    color: var(--gold);
+    font-weight: normal;
+    font-size: 1.7rem;
+    margin: 3.2rem 0 1rem;
+    letter-spacing: 0.03em;
+  }
+  h2 .chap {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.3rem;
+  }
+  p { margin: 0 0 1.15rem; }
+  .scene {
+    width: 100%;
+    border-radius: 8px;
+    margin: 1.6rem 0;
+    box-shadow: 0 8px 30px #0008;
+    display: block;
+  }
+  .clipping {
+    background: var(--parchment);
+    color: var(--parchment-ink);
+    padding: 1.6rem 1.8rem;
+    margin: 2.4rem 0;
+    border-radius: 3px;
+    box-shadow: 0 6px 24px #0007;
+    transform: rotate(-0.6deg);
+    font-family: 'Iowan Old Style', Georgia, serif;
+  }
+  .clipping:nth-of-type(even) { transform: rotate(0.5deg); }
+  .clipping .masthead {
+    text-align: center;
+    font-variant: small-caps;
+    letter-spacing: 0.25em;
+    font-size: 1.05rem;
+    border-bottom: 2px solid var(--parchment-ink);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.9rem;
+  }
+  .clipping h3 {
+    text-align: center;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.7rem;
+  }
+  .clipping p { font-size: 0.98rem; margin-bottom: 0.7rem; }
+  .clipping p:last-child { margin-bottom: 0; }
+  .cast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.2rem;
+    margin: 1.8rem 0 1rem;
+  }
+  .cast figure { text-align: center; }
+  .cast img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px #0009;
+  }
+  .cast figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.86rem;
+    color: var(--ink-dim);
+  }
+  .cast figcaption b {
+    display: block;
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: normal;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+  }
+  .drop {
+    text-align: center;
+    color: var(--gold-dim);
+    letter-spacing: 0.5em;
+    margin: 2.6rem 0;
+  }
+  .cliffhanger {
+    text-align: center;
+    margin: 3.5rem 0 1rem;
+    padding: 2.2rem 1.5rem;
+    border: 1px solid var(--gold-dim);
+    border-radius: 10px;
+    background: #ffffff08;
+  }
+  .cliffhanger .big {
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 0.6rem;
+  }
+  footer {
+    text-align: center;
+    color: var(--ink-dim);
+    font-size: 0.85rem;
+    padding: 0 1rem 3rem;
+    font-style: italic;
+  }
+  em.voice { color: var(--accent); font-style: italic; }
+</style>
+</head>
+<body class="stars">
+
+<header>
+  <div class="kicker">The Feast of the Falling Star &middot; Daggerford</div>
+  <h1>The Returning Star</h1>
+  <div class="sub">A chronicle of the first two nights, compiled by a witness of no consequence</div>
+</header>
+
+<div class="hero"><img src="img/poster.jpg" alt="The Returning Star"></div>
+
+<main>
+
+<div class="preamble">
+  <p>What follows is a true and mostly accurate account of recent events in Daggerford, assembled from the testimony of stall-holders, guardsmen, one furious cart owner, and this chronicler's own two eyes. I do not know what anyone was <em>thinking</em>. I can only report what they <em>did</em> — which, in fairness, was plenty.</p>
+</div>
+
+<h2><span class="chap">Dramatis Personae</span>Four strangers, briefly</h2>
+
+<div class="cast">
+  <figure>
+    <img src="img/action_celeste.png" alt="Celeste">
+    <figcaption><b>Celeste of Harvest Hill</b>A local farm girl lately of Waterdeep, where she finds curiosities for money. Has lately acquired a curiosity of her own.</figcaption>
+  </figure>
+  <figure>
+    <img src="img/action_kav.png" alt="Rex">
+    <figcaption><b>Kavarex "Rex"</b>Of the Silver Sail. Festival security. Devastating in conversation; on this particular evening, less devastating with rope.</figcaption>
+  </figure>
+  <figure>
+    <img src="img/action_fiz.png" alt="Fiz">
+    <figcaption><b>Fizwick "Rooffall" Cogburn</b>A foreign gentleman of unusual proportions who builds siege equipment the way other men whittle. Briefly a guest of the town jail.</figcaption>
+  </figure>
+  <figure>
+    <img src="img/action_ashka_v3.png" alt="Ashka">
+    <figcaption><b>Ashka of the Misty Forest</b>A druid of the nearby woods. Fluent in animal. Deeply concerned about the trees, and increasingly, about everything else.</figcaption>
+  </figure>
+</div>
+
+<h2><span class="chap">Chapter One</span>The night the sky fell</h2>
+
+<p>It began, as festivals so often do, with everything going wrong at once.</p>
+
+<p>On the eve of the great night — the Returning Star hanging fat and brilliant over the market square, sixty years since its last visit — a <em>second</em> streak of light peeled away from the first and came down behind the fountain with a bang that knocked the froth off every ale in the square.</p>
+
+<p>What climbed out of the smoke was, depending on which witness you believe, a hare, a demon, a very fast turnip, or "a rabbit that God drew from memory." It was small. It glowed. It had, by broad consensus, more eyes than strictly necessary. And it was <em>terrified</em> — which the crowd expressed solidarity with by also becoming terrified. A stall went into a brazier. A fire started. A horse made a break for it and took a cart with it.</p>
+
+<img class="scene" src="img/scene_market_chaos.png" alt="Chaos in the market square">
+
+<p>Into this scene stepped our four strangers, separately, and each entirely in character — as I would come to learn.</p>
+
+<p>The dragonborn festival guard attempted what I can only describe as an <em>architectural</em> route to the creature: up a cart, off a wall, over the square — an approach that ended inside a different, collapsing cart, from which he emerged with the immaculate posture of a gymnast who has decided the fall was part of the routine. He then produced a rope, tied a truly beautiful lasso, and missed. Twice. Both throws were gorgeous. The creature simply declined to participate.</p>
+
+<p>The tiefling raised her hands, said something green and rustling, and the fire — I saw this myself — <em>sat down</em> like a scolded dog, half its former size.</p>
+
+<p>The young woman from Harvest Hill stood very still at the edge of the square, watching the creature with an expression I could not read and will not pretend to.</p>
+
+<p>And the short, enormous foreigner — the one shaped like a keg wearing a larger keg — surveyed the burning, screaming, horse-infested square, nodded to himself, put down a bag far too heavy for a man twice his size, and began, with total serenity, <em>to build something</em>. Hammering. Mid-apocalypse. Witnesses describe the sound of cheerful tinkering underneath the screaming, like a music box in a thunderstorm.</p>
+
+<p>The something turned out to be a cannon that fires nets. I am told this is not a normal thing to be able to build in minutes, from a bag. The creature was netted. The square exhaled. The town crier announced, with the confidence of a man paid by the announcement, that a <em>fragment of the comet</em> had landed and all was well.</p>
+
+<p>The four people standing around a netted creature with too many eyes did not appear reassured. They appeared, if anything, <em>acquainted</em> — in the way of people who have just jointly acquired a problem.</p>
+
+<div class="clipping">
+  <div class="masthead">The Daggerford Crier</div>
+  <h3>Comet Fragment Lands in Square; Lord Mayor Urges Calm</h3>
+  <p>Officials confirm the object which struck the market square on festival eve was a harmless fragment of the Returning Star. Damages are limited to one (1) stall, one (1) cart, one (1) watermelon, and the dignity of an unnamed member of festival security.</p>
+  <p>The Lord Mayor reminds residents that the Star brings <em>fortune</em>, and that panicking during a festival of fortune is in poor taste.</p>
+</div>
+
+<h2><span class="chap">Chapter Two</span>The interview in the alley</h2>
+
+<p>The four withdrew to a side street, where the druid knelt by the net and — witnesses on the overlooking balconies swear to this — <em>spoke</em> to the creature, in chirps. The creature chirped back.</p>
+
+<p>The conversation, as later relayed: it remembers fields. It remembers eating carrots — the ones with three heads, it specified, as though this were the ordinary kind. It was with its friends, and then it was here, and it does not know what a comet is, or a race, or, when pressed on what it is: <em class="voice">"I'm a me."</em></p>
+
+<p>Philosophers have retired on less.</p>
+
+<p>One further detail, and I set it down plainly because it mattered later: whenever the creature stopped being spoken to, it turned to stare in one particular direction — through walls, as though walls were a rumor. The direction, once the party stepped out and sighted along its gaze, was the hill above town.</p>
+
+<p>Lord Vey's manor.</p>
+
+<p>The creature was asked if it wished to go there. Witnesses report it expressed, in chirps, the strongest possible <em>no</em>.</p>
+
+<h2><span class="chap">Chapter Three</span>The knock on the door</h2>
+
+<p>Here accounts diverge on <em>why</em>, but agree entirely on <em>what</em>: the foreign gentleman, alone, at night, marched half a mile up the hill and went round the manor like a man inspecting a property he intends to buy. Dark west wing. Locked rear. Lit east wing, windows too high for a man of his — let us say <em>concentrated</em> — stature, though he glimpsed something large in a grand room within.</p>
+
+<p>He then knocked on the front door of the most powerful man in Daggerford, at night, uninvited.</p>
+
+<p>A tall, thin, grey personage informed him the manor was closed to visitors. The gentleman, undiscouraged, persisted — records at the guardhouse state he was still explaining himself, with diagrams, as they surrounded him. A member of festival security who arrived during the arrest reviewed the situation with the eye of a professional and offered his colleagues the following expert guidance: <em class="voice">"He's being a bit of a dick — why don't you just take him to jail?"</em></p>
+
+<p>They did. His small brass dog went with him, voluntarily, which the night warden logged as the first recorded instance of a machine <em>refusing bail</em>.</p>
+
+<img class="scene" src="img/scene_jail_bolt.png" alt="A night in the cells">
+
+<div class="clipping">
+  <div class="masthead">Public Order Notices</div>
+  <h3>Detained</h3>
+  <p>One (1) foreign gentleman of unusual proportions, on charges of Knocking Persistently. Detained alongside: one (1) small brass hound(?), no charges, would not leave. Both released the following morning into the custody of an associate describing himself, improbably, as "his supervisor."</p>
+</div>
+
+<h2><span class="chap">Chapter Four</span>The grey rings</h2>
+
+<p>The next morning — the day of the great night itself, comet due at zenith — the druid led her new companions toward her grove, an hour outside town. From the ridge, in dawn light, the countryside told its own story, and nobody laughed at it.</p>
+
+<img class="scene" src="img/scene_grey_grove.png" alt="The grey rings seen from the ridge">
+
+<p>The land is going grey. Not dying — <em>fading</em>, in great concentric rings, grass and hedge and tree drained like dye rinsed from cloth, and the rings have a center. You could stand on the ridge and draw the circles with your finger, ring inside ring inside ring, closing on the hill above town.</p>
+
+<p>On the manor.</p>
+
+<p>The rings had grown by the walk back. The animals, the druid noted, had already worked this out; they have been leaving for weeks. Animals do not wait for the town crier.</p>
+
+<h2><span class="chap">Chapter Five</span>The salon</h2>
+
+<p>That evening Lord Vey opened his manor for the festival's grandest gathering — fifty guests, a string quartet, and enough displayed treasure to ransom a modest king. How our four came to be inside is a matter I decline to examine closely, though I note for the record that festival security walked in through the front door, and that a guard on the east terrace was seen that evening buying a round for his colleagues with unusual generosity.</p>
+
+<img class="scene" src="img/scene_salon.png" alt="Lord Vey's salon">
+
+<p>At the head of the great room, on a pedestal, stood the evening's centerpiece: a sphere of milky glass in a cage of silver, glowing faintly. Pulsing, if you watched it long enough. Guests called it <em>the lantern</em>. Beside it stood a construct of polished brass, seven feet of it, utterly motionless all evening — and if you think a motionless thing cannot follow you around a room, you have not stood in that one. The doors to the east wing stayed locked, flanked by guards, and from beyond them came a hum you felt in your teeth rather than heard.</p>
+
+<p>Gossip flowed faster than the wine. That a certain gentleman had offered a <em>thousand gold</em> for the lantern and been refused. That Vey would say only that it was <em>essential for something</em>. That he has owned it barely a month. That he has been quietly buying every scrap of star-metal in the region. And that he has not been the same — this from an old acquaintance of his, into his fourth glass — since his wife died, eleven years ago.</p>
+
+<p>Our four worked the room in their four ways. The sailor acquired an instant title, a fictional estate, and a conversational orbit of wealthy admirers. The druid watched the room the way she watches weather. The foreign gentleman studied the brass construct with the expression of a man reading a letter from home. The finder of curiosities walked up to the lantern itself and looked at it for a long moment — and whatever she concluded, she shared with her companions and not with me.</p>
+
+<p>Then three of the four laid their cards on the table, right there among the canapés. The trees, said the druid, and the rings, and the fading. Home, said the foreigner: he wants to go home, and he believes the way is here. A thousand gold, said the sailor, with the sincerity of a man being sincere about money for once.</p>
+
+<p>The fourth said nothing. The fourth went to talk to the host.</p>
+
+<div class="drop">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+<p>I was near enough to hear it, and I will report it exactly, because it was the strangest moment of a strange two days. The young woman from Harvest Hill approached Lord Vey — a man she has never met — and said, quietly:</p>
+
+<p style="text-align:center; font-size:1.2rem; font-style:italic; color:var(--gold); margin: 1.8rem 0;">"I'm sorry that we can't see her. She's not there where you're looking."</p>
+
+<p>The lord of the manor went very still. He said his wife died eleven years ago. He said he didn't know what she was talking about. And then this man — who had been all evening the perfect, polished host — <em>hardened</em>, turned, and walked away from a farm girl as though retreating from something, while his grey steward materialized to sweep her off toward a bore with opinions about star-metal.</p>
+
+<p>Whatever she touched in him, she touched it clean.</p>
+
+<div class="clipping">
+  <div class="masthead">The Daggerford Crier &middot; Society Pages</div>
+  <h3>A Triumph at the Manor</h3>
+  <p>Lord Vey's Star Salon was declared the event of the season. The guest list was impeccable, saving reports of a foreign lord of no known lineage but remarkable teeth, and a brief chill in the host's mood late in the evening, attributed by all sensible observers to a draught.</p>
+</div>
+
+<h2><span class="chap">Chapter Six</span>Where we leave them</h2>
+
+<p>Midnight approaches. The comet climbs toward its zenith — the exact zenith, the once-in-sixty-years moment the entire festival exists for. The east wing hums behind locked doors. The lantern pulses on its pedestal like something breathing. The brass sentinel has not moved an inch, which somehow keeps getting worse.</p>
+
+<p>And in a quiet corner of the grandest party Daggerford has thrown in a generation, four people who were strangers two nights ago lean close over untouched wine, and plan. What they said, this chronicler declines to repeat — partly out of discretion, and partly because some of it may constitute conspiracy.</p>
+
+<p>I will say only this: one of them asked whether anyone would like a spider, and nobody laughed.</p>
+
+<div class="cliffhanger">
+  <div class="big">The Star reaches its zenith on Monday.</div>
+  <div>Same table. Same dice. Bring your character sheets — and perhaps a plan.</div>
+</div>
+
+</main>
+
+<footer>
+  Compiled by an unreliable chronicler of the Feast &middot; illustrations conjured by a friendly spirit named Lume &middot; all inaccuracies are the fault of the witnesses
+</footer>
+
+</body>
+</html>
