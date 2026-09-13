@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Returning Star — A Chronicle</title>
-<meta name="description" content="A chronicle of the Feast of the Falling Star, compiled by an unreliable witness.">
+<meta name="description" content="A chronicle of the Feast of the Falling Star in Daggerford — two parts so far — compiled by an unreliable witness.">
 <style>
   :root {
     --night: #0b0e1a;
@@ -196,6 +196,82 @@
     font-style: italic;
   }
   em.voice { color: var(--accent); font-style: italic; }
+
+  nav.toc {
+    max-width: 720px;
+    margin: 2.2rem auto 0;
+    padding: 1.2rem 1.4rem;
+    border: 1px solid var(--gold-dim);
+    border-radius: 10px;
+    background: #ffffff06;
+    font-size: 0.95rem;
+  }
+  nav.toc .toc-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.6rem;
+  }
+  nav.toc ol { list-style: none; margin: 0; padding: 0; }
+  nav.toc li { margin: 0.25rem 0; }
+  nav.toc li.sub { padding-left: 1.2rem; color: var(--ink-dim); font-size: 0.9rem; }
+  nav.toc a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); }
+  nav.toc a:hover { color: var(--gold); }
+  nav.toc .soon { color: var(--ink-dim); font-style: italic; }
+  .part {
+    text-align: center;
+    margin: 4.5rem 0 1rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--gold-dim);
+  }
+  .part-kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .part-title {
+    font-size: 2.3rem;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin: 0.3rem 0 0.5rem;
+  }
+  .part-sub { font-style: italic; color: var(--ink-dim); max-width: 560px; margin: 0 auto; }
+  .placeholder {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin: 1.5rem 0 1rem;
+    border: 1px dashed var(--gold-dim);
+    border-radius: 10px;
+    color: var(--ink-dim);
+    font-style: italic;
+  }
+  .guides {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+  }
+  .guide {
+    border: 1px solid var(--gold-dim);
+    border-radius: 10px;
+    padding: 1.2rem 1.3rem;
+    background: #ffffff06;
+    font-size: 0.95rem;
+  }
+  .guide h3 {
+    color: var(--gold);
+    font-weight: normal;
+    font-size: 1.15rem;
+    margin-bottom: 0.2rem;
+  }
+  .guide .who { font-size: 0.8rem; color: var(--ink-dim); font-style: italic; margin-bottom: 0.7rem; }
+  .guide ul { margin: 0 0 0.5rem 1.1rem; padding: 0; }
+  .guide li { margin: 0.3rem 0; }
+  .guide p { margin-bottom: 0.6rem; }
+  .backtop { text-align: center; margin: 2.5rem 0 0; font-size: 0.85rem; }
+  .backtop a { color: var(--gold-dim); text-decoration: none; }
 </style>
 </head>
 <body class="stars">
@@ -203,10 +279,23 @@
 <header>
   <div class="kicker">The Feast of the Falling Star &middot; Daggerford</div>
   <h1>The Returning Star</h1>
-  <div class="sub">A chronicle of the first two nights, compiled by a witness of no consequence</div>
+  <div class="sub">A chronicle of the Feast, compiled by a witness of no consequence</div>
 </header>
 
 <div class="hero"><img src="img/poster.jpg" alt="The Returning Star"></div>
+
+<nav class="toc" id="top">
+  <div class="toc-title">Contents</div>
+  <ol>
+    <li><a href="#cast">Dramatis Personae</a></li>
+    <li><a href="#part-one">Part One — The Night the Sky Fell</a></li>
+    <li class="sub">Chapters One to Six: the hare, the alley, the jail, the grey rings, the salon, the plan</li>
+    <li><a href="#part-two">Part Two — The Zenith</a> <span class="soon">(new)</span></li>
+    <li class="sub">Chapters Seven to Thirteen: the handkerchief, the loom, the web, the door, the fireworks</li>
+    <li><a href="#morning">The Morning After</a> <span class="soon">(being written)</span></li>
+    <li><a href="#guides">For the Players — Upgrade Guides</a> <span class="soon">(coming)</span></li>
+  </ol>
+</nav>
 
 <main>
 
@@ -214,7 +303,7 @@
   <p>What follows is a true and mostly accurate account of recent events in Daggerford, assembled from the testimony of stall-holders, guardsmen, one furious cart owner, and this chronicler's own two eyes. I do not know what anyone was <em>thinking</em>. I can only report what they <em>did</em> — which, in fairness, was plenty.</p>
 </div>
 
-<h2><span class="chap">Dramatis Personae</span>Four strangers, briefly</h2>
+<h2 id="cast"><span class="chap">Dramatis Personae</span>Four strangers, briefly</h2>
 
 <div class="cast">
   <figure>
@@ -236,7 +325,14 @@
 </div>
 <p class="artnote">Portraits: artist reconstructions from third-party description — accuracy not guaranteed; likenesses disputed by all four subjects.</p>
 
-<h2><span class="chap">Chapter One</span>The night the sky fell</h2>
+
+<div class="part" id="part-one">
+  <div class="part-kicker">Part One</div>
+  <div class="part-title">The Night the Sky Fell</div>
+  <div class="part-sub">The first two nights of the Feast. In which something lands, someone is jailed, the land goes grey, and a farm girl says the strangest thing anyone has said at a party.</div>
+</div>
+
+<h2 id="ch1"><span class="chap">Chapter One</span>The night the sky fell</h2>
 
 <p>It began, as festivals so often do, with everything going wrong at once.</p>
 
@@ -268,7 +364,7 @@
   <p>The Lord Mayor reminds residents that the Star brings <em>fortune</em>, and that panicking during a festival of fortune is in poor taste.</p>
 </div>
 
-<h2><span class="chap">Chapter Two</span>The interview in the alley</h2>
+<h2 id="ch2"><span class="chap">Chapter Two</span>The interview in the alley</h2>
 
 <p>The four withdrew to a side street, where the druid knelt by the net and — witnesses on the overlooking balconies swear to this — <em>spoke</em> to the creature, in chirps. The creature chirped back.</p>
 
@@ -282,7 +378,7 @@
 
 <p>The creature was asked if it wished to go there. Witnesses report it expressed, in chirps, the strongest possible <em>no</em>.</p>
 
-<h2><span class="chap">Chapter Three</span>The knock on the door</h2>
+<h2 id="ch3"><span class="chap">Chapter Three</span>The knock on the door</h2>
 
 <p>Here accounts diverge on <em>why</em>, but agree entirely on <em>what</em>: the foreign gentleman, alone, at night, marched half a mile up the hill and went round the manor like a man inspecting a property he intends to buy. Dark west wing. Locked rear. Lit east wing, windows too high for a man of his — let us say <em>concentrated</em> — stature, though he glimpsed something large in a grand room within.</p>
 
@@ -301,7 +397,7 @@
   <p>One (1) foreign gentleman of unusual proportions, on charges of Knocking Persistently. Detained alongside: one (1) small brass hound(?), no charges, would not leave. Both released the following morning into the custody of an associate describing himself, improbably, as "his supervisor."</p>
 </div>
 
-<h2><span class="chap">Chapter Four</span>The grey rings</h2>
+<h2 id="ch4"><span class="chap">Chapter Four</span>The grey rings</h2>
 
 <p>The next morning — the day of the great night itself, comet due at zenith — the druid told her new companions what her woods had been telling her for weeks. The land is going grey, she said, and they believed her the way you believe a weather report: politely. Then they saw the ridge road for themselves, and stopped being polite about it.</p>
 
@@ -314,7 +410,7 @@
 
 <p>The rings had grown by the walk back. The animals, the druid noted, had already worked this out; they have been leaving for weeks. Animals do not wait for the town crier.</p>
 
-<h2><span class="chap">Chapter Five</span>The salon</h2>
+<h2 id="ch5"><span class="chap">Chapter Five</span>The salon</h2>
 
 <p>That evening Lord Vey opened his manor for the festival's grandest gathering — fifty guests, a string quartet, and enough displayed treasure to ransom a modest king. How our four came to be inside is a matter I decline to examine closely, though I note for the record that festival security walked in through the front door, and that a guard on the east terrace was seen that evening buying a round for his colleagues with unusual generosity.</p>
 
@@ -351,7 +447,7 @@
   <p>Lord Vey's Star Salon was declared the event of the season. The guest list was impeccable, saving reports of a foreign lord of no known lineage but remarkable teeth, and a brief chill in the host's mood late in the evening, attributed by all sensible observers to a draught.</p>
 </div>
 
-<h2><span class="chap">Chapter Six</span>Where we leave them</h2>
+<h2 id="ch6"><span class="chap">Chapter Six</span>Where we leave them</h2>
 
 <p>Midnight approaches. The comet climbs toward its zenith — the exact zenith, the once-in-sixty-years moment the entire festival exists for. The east wing hums behind locked doors. The lantern pulses on its pedestal like something breathing. The brass sentinel has not moved an inch, which somehow keeps getting worse.</p>
 
@@ -360,14 +456,250 @@
 <p>I will say only this: one of them asked whether anyone would like a spider, and nobody laughed.</p>
 
 <div class="cliffhanger">
-  <div class="big">The Star reaches its zenith on Monday.</div>
-  <div>Same table. Same dice. Bring your character sheets — and perhaps a plan.</div>
+  <div class="big">The Star reached its zenith.</div>
+  <div>What happened next is in Part Two.</div>
 </div>
+
+<div class="part" id="part-two">
+  <div class="part-kicker">Part Two</div>
+  <div class="part-title">The Zenith</div>
+  <div class="part-sub">The great night itself. In which a lock is picked, a plan survives contact with nobody, a gentleman is glued to a wall, and the sky is briefly open for business.</div>
+</div>
+
+<div class="preamble">
+  <p>A note on sources. I was in the salon; I was not in the east wing. For what happened behind those doors I have relied on the household steward (who spoke carefully), the town watch (who spoke loudly), and a young guard named Hob who was ordered to stand outside a door with a ball in his pocket and spent the rest of the evening with his ear pressed to it. Where these accounts disagree I have chosen the funniest, which I am told is the historian's method.</p>
+</div>
+
+<h2 id="ch7"><span class="chap">Chapter Seven</span>The council of the canapés</h2>
+
+<p>They had a plan. They had, in fact, several, and spent the better part of an hour discovering that the plans did not agree with one another.</p>
+
+<p>The first proposal, tabled by festival security with the enthusiasm of a man who has seen it done in a play, was to set the curtains on fire. Everyone would run out, the guards would run for water, and the party would stroll into the east wing unobserved. It was the young woman from Harvest Hill who pointed out, not unkindly, that in a fire it is the <em>guests</em> who leave and the <em>guards</em> who stay — and that four people standing calmly beside a locked door in an emptying, burning ballroom would look, if anything, more suspicious than before. The security consultant conceded the point with the grace of a man who had not really wanted to burn anything. The foreign gentleman said he still preferred the spider.</p>
+
+<p>The spider was the druid's proposal, and she proposed it at intervals throughout the evening regardless of what was being discussed. Could she become a spider now? A large one? Could she walk on the ceiling? Could she set a fire <em>and then</em> become a spider, "so it gets confusing"? Her companions explained, with diminishing patience, that a giant spider on the ceiling of a society ball tends to draw the eye. She accepted this the way weather accepts an umbrella.</p>
+
+<p>The plan they settled on was, in the end, the oldest one there is. Two of them would draw the guards from the door. The other two would open it. The draw was to be — I will use the word that was used — <em>seduction</em>, and it was at this point that the foreign gentleman raised the evening's first genuinely difficult question: how did anyone know the guards were <em>straight</em>? A silence followed in which four adventurers reconsidered the entire architecture of their scheme. Festival security, who had drunk with these guards for a week, was able to confirm that they were, and the plan was saved, though not in the way anyone expected.</p>
+
+<h2 id="ch8"><span class="chap">Chapter Eight</span>The handkerchief</h2>
+
+<p>Because the dragonborn did not wait for the ladies to be ready. He simply walked over to the two guards on the east-wing door, nodded in the general direction of his companions, and — I was near enough to catch the shape of it, if not the words — informed them that two young women at the party had drunk rather more than was good for them, were in a receptive frame of mind, and had asked him, as a colleague, whether anyone on the staff might be free. He would, he added, watch the door for them. It was the most persuasive thing I have ever seen a lizard say. The guards' eyes went wide. They looked at each other. They looked at him. They asked, "Are you sure?" They <em>thanked</em> him.</p>
+
+<p>And then they walked over to two women who had been told nothing whatsoever about this.</p>
+
+<p>What the guards heard, on arrival, was the following: that the two ladies were <em>sisters</em> (one tiefling, one human — "adopted," offered the druid, helpfully); that they were feeling hot and bothered; that they believed they might have accidentally taken something; and that they needed some air, specifically on the fluffy mattress that was outside on the lawn. There is no mattress on the lawn. The guards, who were not clever men but were not stupid ones either, exchanged a second look and arrived at the only conclusion available: that whatever was wrong with these two, it was going to be trouble, and the kindest thing would be to walk them briskly out of the building. Which they began, with a firm hand on each elbow, to do.</p>
+
+<img class="scene" src="img/scene_escort.png" alt="The escort, and the handkerchief">
+<p class="artnote">Artist reconstruction from third-party description — accuracy not guaranteed.</p>
+
+<p>The distraction, I must stress, <em>worked</em>. It merely worked on the wrong people. With both guards busy steering two indignant women through a crowded ballroom, the dragonborn stepped to the east-wing door, appeared to drop a handkerchief, bent to retrieve it, and stood up again about ten seconds later with the door unlocked behind him — the foreign gentleman standing squarely in front of the whole operation like a keg that had wandered over to see what was happening. They slipped through. The gentleman's exit was described to me as: <em>one moment he was standing there, the next you saw his back, and then the door was closing.</em></p>
+
+<p>The ladies saw it too, over their shoulders, while being escorted in the opposite direction. The finder of curiosities attempted a diversion — a purse of gold, conjured out of nothing on the floor, which nobody noticed because nobody was looking at the floor — and then, with the front door approaching and her escort's grip not loosening, did the only sensible thing and vanished in a puff of smoke, reappearing beside her companions on the far side of the east-wing door just as it shut.</p>
+
+<p>This left the druid alone with two guards who had just watched her sister evaporate. They did not ask questions. They took an arm each, marched her to the front door of the manor, and put her out on the step with the words, "Whatever is going on here — go away," and the door closed on the evening's grandest party with a tiefling on the wrong side of it.</p>
+
+<p>She went round the side of the house. She found a window. She could not reach it. She opened it anyway — from the lawn, with a gesture and a word, the way one might open a door for a guest — and climbed in. Witnesses inside describe the window <em>blowing open by itself</em>, and then a druid coming over the sill and saying, cheerfully, <em class="voice">"Hey, guys. Hello."</em></p>
+
+<h2 id="ch9"><span class="chap">Chapter Nine</span>The bored guard, and the loom</h2>
+
+<p>Before that, though: the corridor. The dragonborn and the gentleman found themselves in a short L-shaped passage lit by candles, and the gentleman — whose ears are better than his manners — heard, from behind the door at the end of it, the sound of somebody throwing a ball against a wall and catching it. <em>A prisoner who is bored,</em> he concluded, and put his head round the door to find not a prisoner but a guard, holding a ball, looking very surprised, who said what guards say: "You're not supposed to be here."</p>
+
+<p>He was not supposed to be there. Festival security, however, <em>knew</em> this guard — knew his voice through the door, knew his name — and explained, with a warmth that would have persuaded a stone, that these were special guests of his lordship, sent to view the collection before the great moment, and would Hob be so good as to wait outside and mind the corridor while they had a look? Hob, who is paid nowhere near enough for any of this, said "Fair enough," and went and stood outside the door. He is my best source for what followed, and I have bought him several drinks.</p>
+
+<p>And so three of them, and shortly four, stood alone in the east wing and saw what the whole festival had been humming about.</p>
+
+<img class="scene" src="img/scene_loom.png" alt="The east wing">
+<p class="artnote">Artist reconstruction from third-party description — accuracy not guaranteed.</p>
+
+<p>It filled the hall. Hob, who saw it every day, described it as a loom, "if the person who built it had only ever had looms described to them." Brass. Silver wire strung like the inside of a harp. Cables running across the floor to a pedestal at the machine's heart — a pedestal exactly the size of the one in the ballroom, and empty. At the centre of it all, a jagged shard of something dark that had, the gentleman said immediately and with an odd tenderness, <em>fallen a very long way</em>. One wall was covered in star-charts with a comet drawn in. On the other hung a portrait of a laughing woman whose varnish had gone entirely grey.</p>
+
+<p>The foreign gentleman walked round it once the way he had walked round the manor, and this time he did not need to knock. Whatever this was, he told the others, it was built to draw on something placed in that cradle — and it was built, he was quite sure, by someone who had spent years studying what the comet does. Which is, apparently, this: it thins the wall between this world and others. And the machine was an instrument for reaching through that thinned wall and <em>taking</em> things.</p>
+
+<p>Things such as, for instance, a short enormous engineer from somewhere else, pulled through a roof on the night of a bad harvest.</p>
+
+<p>He said this quite calmly. He also said that the machine was missing its power source, that the power source was plainly the lantern, and that they had therefore spent an hour breaking into the one room in the manor the lantern was not in. Festival security observed that this had been a very complicated way to find that out.</p>
+
+<h2 id="ch10"><span class="chap">Chapter Ten</span>The masterpiece at work</h2>
+
+<p>They need not have worried about fetching it. The lantern came to them.</p>
+
+<p>The door opened and Lord Vey walked in, in his shirtsleeves, with the grey steward at his shoulder — the steward looking, Hob says, "like a man who has found mice in the pantry" — and behind them, walking, <em>walking</em>, on its own two legs, smooth and purposeful and horribly quiet, the brass sentinel from the ballroom, carrying the lantern in its hands like a butler carrying soup.</p>
+
+<p>Vey did not shout. That is the detail everyone agrees on. He looked at four intruders in his laboratory on the most important night of his life and said, in effect, that it was <em>quite all right</em> that they were here — they might as well witness his masterpiece at work — and would they please stand back from the machine, because it was delicate. Then he went to his levers. The sentinel set the lantern on the empty pedestal. The hum in everyone's teeth went up a semitone.</p>
+
+<p>Several things now happened in the space of a breath, and it is important to be clear about the order, because the order is the whole story.</p>
+
+<p>The gentleman, who had been watching the steward, noticed him slip back out of the room — and noticed lights approaching in the corridor beyond. The dragonborn crossed quietly to the door and locked it from the inside. The young woman from Harvest Hill made a small gesture with her fingers, and an invisible hand nudged the lantern off its pedestal, where it rolled across the floor. Lord Vey looked up from his levers with the expression of a man whose cat has just walked across his manuscript, and asked them — <em>please</em> — to stop.</p>
+
+<p>And the druid, who had been wanting to be a spider all evening, picked up the lantern and became one.</p>
+
+<h2 id="ch11"><span class="chap">Chapter Eleven</span>One minute in the east wing</h2>
+
+<p>I am reliably informed that what followed took about a minute. Hob, who could only hear it, says it sounded like a foundry falling down a staircase.</p>
+
+<img class="scene" src="img/scene_web.png" alt="One minute in the east wing">
+<p class="artnote">Artist reconstruction from third-party description — accuracy not guaranteed.</p>
+
+<p>The spider went straight up the wall and onto the ceiling, thirty feet above the floor, with the lantern held in its legs, where nobody could reach it and everybody could see it. The young woman threw a bolt of fire into the machine and bent a gear. The brass sentinel, having apparently decided that the person setting fire to the engine was the problem, turned and struck her twice, hard enough that she went from standing to barely standing in one movement. The gentleman swung his hammer at Lord Vey and missed by a mile; his small brass dog did not miss, and bit the lord of the manor on the leg.</p>
+
+<p>Then the spider tried to web the door shut and webbed the dragonborn instead.</p>
+
+<p>I want to dwell on this. He was standing beside the door. The web was intended for the door. It hit him squarely and pinned him to the wall, wrapped from collar to boots, facing the lock, which was <em>precisely</em> the position from which to hear a key turn in it. The steward came through with a guard behind him, took one look at the room, and gave the sensible order — <em>knock them out</em> — and the guards, who did not want to hit anyone, hit the gentleman's armour and missed the girl, and it was at this point that festival security tore himself off the wall with a roar of language I will not reproduce, turned to the newly arrived guards with a smile, and explained that he was <em>not with these people</em>.</p>
+
+<p>Two more guards had just come in. They looked at him — a colleague, covered in web, in a locked laboratory, beside a giant spider, insisting he was not involved — and reached the unanimous verdict that he was <em>definitely with these people</em>, and attacked him. Both missed. He is very hard to hit. This will matter.</p>
+
+<p>Lord Vey, meanwhile, had had enough. He looked up at the spider on his ceiling, holding his life's work in its legs, and said — Hob heard this clearly — <em class="voice">"I'm sorry."</em> Then he threw eight darts of light at it.</p>
+
+<p>They do not miss. That is the point of them. The spider came apart into a druid, and the druid fell thirty feet onto a hardwood floor, and the lantern bounced away from her across the boards, and Lord Vey — an old man, in shirtsleeves, who had not slept in a very long time — ran after it like a boy after a hoop, scooped it up, and put it back on the pedestal. The machine drank. The hum climbed.</p>
+
+<div class="drop">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+<p>The second minute was not a fight. I am not sure what to call it. Every person in that room, having discovered that hitting things was going badly, began to <em>talk</em>, and the talking went far better.</p>
+
+<p>The young woman went first, and did it the simple way: she walked away from the sentinel that had nearly killed her, walked up to the pedestal, took the lantern out from under Lord Vey's nose, and walked off with it. He looked, Hob says, <em>dismayed</em>. The sentinel, deprived of her, took it out on the gentleman, who absorbed the blow like a wall absorbing a football.</p>
+
+<p>And then the gentleman — bleeding, hammer down — stepped up to the levers and spoke to Lord Vey as one engineer to another. He said he understood the machine. He said that if you use a thing like this to <em>pull down</em>, you tear what you pull; but that if you used it to <em>push up</em>, you might mend what was hurt. And Lord Vey, who had dismissed everyone in that room as a nuisance, <em>listened</em>. He argued back like a colleague: the veil was thin <em>tonight</em>, it would not be thin again for sixty years, it was the only way he could find her, it had to be now. The gentleman turned to the room and translated, at a volume the corridor could hear: <em class="voice">"It's a wife he wants to pull from the sky. Because he's very sad."</em></p>
+
+<p>The druid, from the floor, closed the girl's worst wound with a word. Then the room asked the girl a question it had been failing to ask for two nights: what, exactly, was <em>she</em> here for?</p>
+
+<p>A hedgehog, she said. Spikey. Spikey the hedgehog had gone missing.</p>
+
+<p>Festival security received this news in the tone of a man who has just been told the war was about a goose. <em class="voice">"So we're about to get killed because of a hedgehog."</em> He was assured that it was a very special hedgehog. He said he was sure it was lovely. She said — and here I think she was being honest for the first time — that she believed the hedgehog was <em>in the lantern</em>, and that when she had stood before it in the ballroom and reached out to it, she had heard her friend's voice through it, faint and broken, like something calling through a wall.</p>
+
+<p>The dragonborn asked, reasonably, why she had not mentioned this when everyone was sharing their motivations among the canapés. She said he had been being a bit pushy.</p>
+
+<p>I record without comment that the steward then shot her in the shoulder with a crossbow, that a guard finally landed a mace on the dragonborn hard enough to make him reconsider his career, and that the dragonborn's response — while bleeding — was to <em>disengage with a flourish</em>, approach Lord Vey, and deliver a speech about the dying forest, the creature from another land, and the very special hedgehog suffocating in the lantern, which ended with him asking Vey, quite sincerely, what happened to the lantern's occupant when the cycle completed. Vey said it was a power source. The dragonborn said it was a living creature. Vey said, <em class="voice">"Did you think the same about your bowl of stew this morning?"</em> — and then, hearing himself, told his guards to lower their weapons and asked if everyone could <em>please</em> calm down and talk.</p>
+
+<p>Which is when two of them noticed that the machine had not calmed down at all. It had no lantern. It was getting louder anyway.</p>
+
+<h2 id="ch12"><span class="chap">Chapter Twelve</span>The speech, the gear, and the door</h2>
+
+<p>She turned round with the lantern in her arms and said it plainly. I have it from Hob nearly word for word, because Hob, standing in a corridor with a ball in his pocket, wept.</p>
+
+<p>She said that there was so much at stake — that the creature in his lantern was the closest friend she had ever had, that the druid's whole forest was dying for it, that everyone in this room had something dear they wanted. And she said she knew his wife could not come back from this, because she had heard from that other place herself, and his wife was not there. She said she was sorry. She said she was truly sorry he was going through this. And she said that the answer was not to bring more grief.</p>
+
+<p>He said, <em class="voice">"But I was so close."</em> And then the lord of the manor, the perfect host, the man who had four decimal places for everything, sat down on the floor of his laboratory and cried.</p>
+
+<p>Which left the machine.</p>
+
+<p>It was building. Nobody had told it to. Something in it — the bent gear, the levers, the sixty years — had passed the point where it needed a lantern, and the note in everyone's teeth was climbing toward something none of them wanted to hear the end of. The gentleman looked at it once, and told the room, with terrible calm, that if nobody did anything in the next few seconds this thing would take half the town with it. Then he did something. He pulled one lever — the right lever, first time, no hesitation — and put his bare hand into the moving works and <em>pulled out a gear</em> that was spinning fast enough to take his fingers off and hot enough to try. He pulled a cable. The note changed. And then —</p>
+
+<p>Then the machine stopped. Everything stopped. Hob says the ball he was bouncing hung in the air.</p>
+
+<img class="scene" src="img/scene_spikey.png" alt="The door, and what came through it">
+<p class="artnote">Artist reconstruction from third-party description — accuracy not guaranteed.</p>
+
+<p>Something opened. Not a door in the wall; a door in the <em>room</em>. Through it: stars, and light, and small bright things pouring out and away like sparks from a struck log — over the manor, over the town, out toward the fields. And in among the bright things, seen only by the two sharpest pairs of eyes in the room, one thing that was not bright. Something dark, and wrong, and patient, that stepped through and hung there in the stopped moment and then <em>was not there</em>, in a way that neither of them could afterwards describe to my satisfaction or their own.</p>
+
+<p>The door closed. The great loom collapsed into pieces on the floor as though it had only ever been held up by the sound it made. And the silence in the east wing was the first true silence anyone in Daggerford had heard all night.</p>
+
+<p>The lantern in her arms was empty. The glass was broken. And a voice that only she could properly hear said something she later repeated to the others, which I set down as she gave it: <em class="voice">"I could have left. I wanted to stay with you. But something went through there. It's found us. It's not good."</em></p>
+
+<p>And a small spiked light — a hedgehog, if you had seen it as a child; a spiky bright thing with a face, if you had not — floated once round the ruined room and settled on her shoulder, where by all accounts it belongs.</p>
+
+<p>Nobody argued with her about whether it was a hedgehog.</p>
+
+<h2 id="ch13"><span class="chap">Chapter Thirteen</span>Fireworks</h2>
+
+<p>The steward was the first to recover, because stewards are. He pointed out that the town watch would be there in moments — the light had been visible from the square — and that what the four of them said in the next few minutes would decide whether his lordship slept tonight in his bed or in a cell. He did not beg. He said he would be grateful.</p>
+
+<p>The foreign gentleman thought about this for as long as it takes to say it and announced that it had been <em>fireworks</em>. His fireworks. To celebrate the festival. He had perhaps overdone it, and made a mess, and was sorry. The others, one after another, agreed that yes, now he mentioned it, it had been fireworks. The watch arrived; the steward, a reputable man, confirmed the fireworks; the lord of the manor was too busy weeping to contradict anyone; and the watch, looking at a laboratory full of dead brass and four exhausted strangers, one of them wearing a small glowing animal, said what the watch always says: that they might be back with questions, and that nobody was to leave town.</p>
+
+<p>Then they were shown to the guest rooms of the manor they had broken into, and slept.</p>
+
+<div class="clipping">
+  <div class="masthead">The Daggerford Crier &middot; Late Edition</div>
+  <h3>Unscheduled Fireworks at the Manor; Lord Vey Indisposed</h3>
+  <p>A spectacular pyrotechnic display, credited to a visiting engineer, concluded the Star Salon shortly after midnight and was visible from every street in town. Residents reporting "lights coming down in the fields" are reminded that this is what fireworks do. Lord Vey is resting. His steward asks that inquiries be directed to him.</p>
+  <p>Separately: a member of festival security was treated for minor injuries and a quantity of spider silk. He declined to explain the latter.</p>
+</div>
+
+<h2 id="ch13b"><span class="chap">Postscript</span>A matter of naming</h2>
+
+<p>One last thing, because it was raised at the table and I think it will be raised again. Among the foreign gentleman's people it is the custom to name a man for what he has <em>done</em>, and until tonight this town has called him <em>Rooffall</em>, after his arrival. Tonight he read a machine nobody else could read, argued a grieving wizard to a standstill, and put his bare hand into a spinning engine to keep the sky from falling on Daggerford.</p>
+
+<p>The guardhouse is taking suggestions.</p>
+
+<div class="cliffhanger">
+  <div class="big">Something came through the door, and it is not gone.</div>
+  <div>The morning after is still being written. Everyone gains a level before the next session.</div>
+</div>
+
+<div class="part" id="morning">
+  <div class="part-kicker">Interlude</div>
+  <div class="part-title">The Morning After</div>
+  <div class="part-sub">Daggerford wakes up under a sky that was, for one breath, open.</div>
+</div>
+
+<div class="placeholder">
+  <p>The chronicler is still taking testimony. This part will appear here before the next session — read it before you sit down at the table, because it is where the next chapter begins.</p>
+</div>
+
+<div class="part" id="guides">
+  <div class="part-kicker">For the Players</div>
+  <div class="part-title">Upgrade Guides</div>
+  <div class="part-sub">Everyone reaches level four before the next session. A short note for each of you on what that means and what is worth deciding in advance.</div>
+</div>
+
+<div class="placeholder">
+  <p>Individual guides for Celeste, Fizwick, Ashka and Rex are being written. Celeste's will include Spikey.</p>
+</div>
+
+<!-- DRAFT GUIDES — hidden until reviewed with Daniel. Flip `hidden` off per card when approved. -->
+<div class="guides" hidden>
+  <div class="guide" id="guide-fizz">
+    <h3>Fizwick "Rooffall" Cogburn</h3>
+    <div class="who">Pietro · Artificer (Battle Smith) 3 → 4</div>
+    <p>DRAFT — to be reviewed.</p>
+    <ul>
+      <li>Level 4 gives you an <b>Ability Score Improvement</b> (or a feat). +2 Intelligence makes your spells, Bolt's attacks and your tinkering all better at once.</li>
+      <li>More hit points: roll your hit die (or take the average) and add your Constitution modifier.</li>
+      <li>Nothing new from your subclass until level 5 — so this level is about sharpening what you have: know your prepared spells (Shield and Heroism are always ready for a Battle Smith), and revisit your infusions.</li>
+      <li>Bolt grows with you. Re-read his stat block; he can attack as your bonus action every turn.</li>
+      <li>Salvage: there is a great deal of Verrosian brass on the floor of the east wing. Bring a bag.</li>
+    </ul>
+  </div>
+  <div class="guide" id="guide-ashka">
+    <h3>Ashka of the Misty Forest</h3>
+    <div class="who">Sibel · Druid (Circle of the Moon) 3 → 4</div>
+    <p>DRAFT — to be reviewed.</p>
+    <ul>
+      <li>Level 4 gives you an <b>Ability Score Improvement</b> (or a feat). +2 Wisdom improves every spell you cast and the DC people must beat.</li>
+      <li>Wild Shape widens: beasts with a swim speed are now allowed. Pick two or three forms and know their numbers before the session — the spider's web needs a recharge roll, the bear hits hard, the wolf is fast.</li>
+      <li>One more cantrip. Also worth a look: Moonbeam (you found it), Entangle, Faerie Fire.</li>
+      <li>Healing Word is a bonus action and it kept Celeste alive. Keep it prepared.</li>
+      <li>Remember: a shapeshift carries everything you hold. That trick worked once. The ceiling is not a hiding place.</li>
+    </ul>
+  </div>
+  <div class="guide" id="guide-celeste">
+    <h3>Celeste of Harvest Hill</h3>
+    <div class="who">Anna · Sorcerer 3 → 4</div>
+    <p>DRAFT — to be reviewed. Spikey's powers and stats to be designed together.</p>
+    <ul>
+      <li>Level 4 gives you an <b>Ability Score Improvement</b> (or a feat). +2 Charisma makes everything you do better — spells, persuasion, and the speech that ended the fight.</li>
+      <li>You learn one new spell and one new cantrip. Choose the spell with a fight in mind.</li>
+      <li>Count your slots: Misty Step and Detect Thoughts are level 2, and you have few of those. Shield can cancel a hit as a reaction — it would have saved you fifteen hit points tonight.</li>
+      <li>Disengage is an action anyone can take. It is on no sheet and it saved your life.</li>
+      <li><b>Spikey.</b> Your familiar, at last visible to everyone. Tiny, fragile, flies, whispers to you at any distance. We design the rest together.</li>
+    </ul>
+  </div>
+  <div class="guide" id="guide-rex">
+    <h3>Kavarex "Rex" of the Silver Sail</h3>
+    <div class="who">Pepe · Rogue (Swashbuckler) 3 → 4</div>
+    <p>DRAFT — to be reviewed.</p>
+    <ul>
+      <li>Level 4: Ability Score Improvement or a feat. You have already planned this. Possibly several times.</li>
+      <li>Sneak Attack wants an ally next to your target, or advantage. Every round. Say it out loud.</li>
+      <li>Your persuasion is a weapon. Tonight it opened two doors and one wizard. Nobody in Daggerford has forgotten the web.</li>
+    </ul>
+  </div>
+</div>
+
+<p class="backtop"><a href="#top">↑ Contents</a></p>
 
 </main>
 
 <footer>
-  Compiled by an unreliable chronicler of the Feast &middot; illustrations conjured by a friendly spirit named Lume &middot; all inaccuracies are the fault of the witnesses
+  Compiled by an unreliable chronicler of the Feast &middot; illustrations conjured by a friendly spirit named Lume &middot; all inaccuracies are the fault of the witnesses, especially Hob
 </footer>
 
 </body>
